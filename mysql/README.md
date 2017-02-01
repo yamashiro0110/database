@@ -23,3 +23,11 @@ GRANT ALL PRIVILEGES ON ${db_name}.* TO ${user_name}@${hostname};
 ```
 
 > ex) GRANT ALL PRIVILEGES ON sample_db.* TO sample_user@localhost;
+
+## show
+
+variables
+
+```sql
+show variables like "chara%";
+```
