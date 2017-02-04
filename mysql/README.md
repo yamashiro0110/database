@@ -31,3 +31,9 @@ variables
 ```sql
 show variables like "chara%";
 ```
+
+user grant
+
+```sql
+SHOW GRANTS FOR ${username}@${hostname};
+```
