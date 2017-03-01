@@ -14,7 +14,8 @@ CREATE DATABASE [IF NOT EXISTS] ${db_name} DEFAULT CHARACTER SET ${charset} COLL
 CREATE USER ${user_name}@${hostname} IDENTIFIED BY [PASSWORD] '${password}';
 ```
 
-> ex) CREATE USER sample_user@localhost IDENTIFIED BY 'sample_user';
+> ex) CREATE USER `sample_user`@`localhost` IDENTIFIED BY 'sample_user';
+> ex) CREATE USER `sample_user`@`%` IDENTIFIED BY 'sample_user';
 
 ## user grant
 
@@ -22,7 +23,8 @@ CREATE USER ${user_name}@${hostname} IDENTIFIED BY [PASSWORD] '${password}';
 GRANT ALL PRIVILEGES ON ${db_name}.* TO ${user_name}@${hostname};
 ```
 
-> ex) GRANT ALL PRIVILEGES ON sample_db.* TO sample_user@localhost;
+> ex) GRANT ALL PRIVILEGES ON sample_db.* TO `sample_user`@`localhost`;
+> ex) GRANT ALL PRIVILEGES ON sample_db.* TO `sample_user`@`%`;
 
 ## show
 
