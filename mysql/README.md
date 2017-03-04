@@ -14,9 +14,23 @@ CREATE DATABASE [IF NOT EXISTS] ${db_name} DEFAULT CHARACTER SET ${charset} COLL
 CREATE USER ${user_name}@${hostname} IDENTIFIED BY [PASSWORD] '${password}';
 ```
 
-> ex) CREATE USER \`sample_user\`@\`localhost\` IDENTIFIED BY 'sample_user';
+ex) 
 
-> ex) CREATE USER \`sample_user\`@\`%\` IDENTIFIED BY 'sample_user';
+```
+CREATE USER `sample_user`@`localhost` IDENTIFIED BY 'sample_user';
+```
+
+```
+CREATE USER `sample_user`@`%` IDENTIFIED BY 'sample_user';
+```
+
+## show users
+
+ex)
+
+```sql
+select user, host from mysql.user where user like 'sample%' \G
+```
 
 ## user grant
 
@@ -24,9 +38,15 @@ CREATE USER ${user_name}@${hostname} IDENTIFIED BY [PASSWORD] '${password}';
 GRANT ALL PRIVILEGES ON ${db_name}.* TO ${user_name}@${hostname};
 ```
 
-> ex) GRANT ALL PRIVILEGES ON sample_db.* TO \`sample_user\`@\`localhost\`;
+ex) 
 
-> ex) GRANT ALL PRIVILEGES ON sample_db.* TO \`sample_user\`@\`%\`;
+```sql
+GRANT ALL PRIVILEGES ON sample_db.* TO `sample_user`@`localhost`;
+```
+
+```sql
+GRANT ALL PRIVILEGES ON sample_db.* TO `sample_user`@`%`;
+```
 
 ## show
 
