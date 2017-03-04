@@ -6,7 +6,11 @@
 CREATE DATABASE [IF NOT EXISTS] ${db_name} DEFAULT CHARACTER SET ${charset} COLLATE ${collation};
 ```
 
-> ex) CREATE DATABASE sample_db DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
+ex) 
+
+```sql
+CREATE DATABASE sample_db DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
+```
 
 ## create user
 
@@ -14,7 +18,7 @@ CREATE DATABASE [IF NOT EXISTS] ${db_name} DEFAULT CHARACTER SET ${charset} COLL
 CREATE USER ${user_name}@${hostname} IDENTIFIED BY [PASSWORD] '${password}';
 ```
 
-ex) 
+> ex) 
 
 ```
 CREATE USER `sample_user`@`localhost` IDENTIFIED BY 'sample_user';
@@ -26,7 +30,7 @@ CREATE USER `sample_user`@`%` IDENTIFIED BY 'sample_user';
 
 ## show users
 
-ex)
+> ex)
 
 ```sql
 select user, host from mysql.user where user like 'sample%' \G
